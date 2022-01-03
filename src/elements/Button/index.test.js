@@ -3,7 +3,7 @@
 /* eslint-disable testing-library/no-container */
 import React from 'react'
 import {render} from '@testing-library/react'
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 import Button from './index'
 

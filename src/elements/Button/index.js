@@ -1,9 +1,10 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import { Link } from "react-router-dom";
 import propTypes from "prop-types";
-
+  
 export default function Button(props) {
-  const className = [props.clasName];
+  const className = [props.className]; 
   if (props.isPrimary) className.push("btn-primary");
   if (props.isLarge) className.push("btn-lg");
   if (props.isSmall) className.push("btn-sm");
@@ -49,7 +50,7 @@ export default function Button(props) {
           to={props.href}
           className={className.join(" ")}
           style={props.style}
-          onclick={onClick}
+          onClick={onClick}
         >
           {props.children}
         </Link>
@@ -61,7 +62,7 @@ export default function Button(props) {
     <button
       className={className.join(" ")}
       style={props.style}
-      onclick={onClick}
+      onClick={onClick}
     >
       {props.children}
     </button>
@@ -70,7 +71,7 @@ export default function Button(props) {
 
 Button.propTypes = {
   type: propTypes.oneOf(["button", "link"]),
-  onclick: propTypes.func,
+  onClick: propTypes.func,
   target: propTypes.string,
   href: propTypes.string,
   className: propTypes.string,
