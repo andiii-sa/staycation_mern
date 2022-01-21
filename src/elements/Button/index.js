@@ -2,10 +2,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import propTypes from "prop-types";
-  
+
 export default function Button(props) {
-  const className = [props.className]; 
+  const className = [props.className];
   if (props.isPrimary) className.push("btn-primary");
+  if (props.isLight) className.push("btn-light");
   if (props.isLarge) className.push("btn-lg");
   if (props.isSmall) className.push("btn-sm");
   if (props.isBlock) className.push("btn-block");
@@ -22,7 +23,7 @@ export default function Button(props) {
         {props.isLoading ? (
           <>
             <span className="spinner-border spiner-border-sm mx-5"></span>
-            <span className="sr-only">Loading...</span> 
+            <span className="sr-only">Loading...</span>
           </>
         ) : (
           props.children
@@ -72,9 +73,10 @@ export default function Button(props) {
 Button.propTypes = {
   type: propTypes.oneOf(["button", "link"]),
   onClick: propTypes.func,
-  target: propTypes.string,
   href: propTypes.string,
+  target: propTypes.string,
   className: propTypes.string,
+  isLight: propTypes.bool,
   isDisabled: propTypes.bool,
   isLoading: propTypes.bool,
   isSmall: propTypes.bool,
